@@ -55,18 +55,17 @@ export default {
     dragStart(event) {
       console.log(this.$refs.oneA.getBoundingClientRect())
       console.log({dragStart: event});
-      this.$store.commit("NodeArrowModule/setStartPosition", {
-        startX: event.clientX,
-        startY: event.clientY,
-      });
+        this.x1= event.clientX;
+        this.y1= event.clientY;
+
     },
     allowDrop(ev) {
       ev.preventDefault();
     },
     onDrag(ev) {
       // ev.preventDefault();
-      const xs = this.$store.state.NodeArrowModule.startX;
-      const ys = this.$store.state.NodeArrowModule.startY;
+      const xs =  this.x1;
+      const ys =  this.y1;
       this.position = getBoxToBoxArrow(0, 0, 5, 5, (ev.clientX - xs), (ev.clientY - ys), 5, 5, {
         padStart: 0,
         padEnd: 0
@@ -74,8 +73,8 @@ export default {
     },
     //drag and drop blocks
     drop(ev, item) {
-      const xs = this.$store.state.NodeArrowModule.startX;
-      const ys = this.$store.state.NodeArrowModule.startY;
+      const xs =  this.x1;
+      const ys =  this.y1;
       this.position = getBoxToBoxArrow((xs - ev.clientX), (ys - ev.clientY), 5, 5, 0, 0, 5, 5, {
         padStart: 0,
         padEnd: 0

@@ -1,23 +1,15 @@
 <template>
-  <div class="hello">
-      <BlockNode draggable={true}/>      <BlockNode draggable={true}/>      <BlockNode draggable={true}/>
-  </div>
-    <div class="hello">
-
-      <BlockNode draggable={true}/>      <BlockNode draggable={true}/>      <BlockNode draggable={true}/>
-  </div>
-    <div class="hello">
-
-      <BlockNode draggable={true}/>      <BlockNode draggable={true}/>      <BlockNode draggable={true}/>
-  </div>
+  <div class="hello"><BlockNode /> <BlockNode /> <BlockNode /></div>
+  <div class="hello"><BlockNode /> <BlockNode /> <BlockNode /></div>
+  <div class="hello"><BlockNode /> <BlockNode /> <BlockNode /></div>
 </template>
 
 <script>
-import BlockNode from "./BlockNode.vue"
+import BlockNode from './BlockNode.vue';
 
 export default {
   name: 'HelloWorld',
- components:{BlockNode},
+  components: { BlockNode },
 };
 </script>
 
